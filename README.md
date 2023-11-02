@@ -1,7 +1,7 @@
 # T3 - Grafo de Precedência
 
 ## Descrição:
- Sejam A, B, C e D threads que contam de 1 a $n_x$ de $t_x$ em $t_x$ segundos (sendo que $x ∈$ {$A, B, C, D$} ). Por exemplo, se $n_A = 5$ e $t_A = 1.0$, então o processo A contará de 1 a 5, de 1 em 1 segundo.
+ Sejam A, B, C e D threads que contam de 1 a $n_x$ de $t_x$ em $t_x$ segundos (sendo que $x ∈$ { $A$, $B$, $C$, $D$ } ). Por exemplo, se $n_A = 5$ e $t_A = 1.0$, então o processo A contará de 1 a 5, de 1 em 1 segundo.
 
  Implemente em Python o grafo de precedência abaixo sendo que uma aresta de um processo X a um processo Y indica que Y só pode iniciar a contagem quando X terminar a sua. No grafo abaixo, isso significa que B e C só podem começar a sua contagem depois que A terminar a sua, e D só iniciará sua contagem quando B e C ambos tiverem terminado.
 
