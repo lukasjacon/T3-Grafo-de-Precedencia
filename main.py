@@ -1,4 +1,4 @@
-from multiprocessing import Process, Semaphore, Value
+from multiprocessing import Process, Semaphore
 from time import sleep
 
 
@@ -10,9 +10,7 @@ def up(semaforo):
     semaforo.release()
     
 
-
 def a(t, n, semaforo_b_c):
-    # Contagem
     print(f"A iniciando contagem (n={n}; t={t})", end="\n", flush=True)
     for i in range(1, n + 1):
         sleep(t)
@@ -21,6 +19,7 @@ def a(t, n, semaforo_b_c):
     # Depois da contagem libera o B e C
     up(semaforo_b_c)
     up(semaforo_b_c)
+
 
 def b(t, n, semaforo_b_c, semaforo_d):
     print(f"  B aguardando . . .")
@@ -33,6 +32,7 @@ def b(t, n, semaforo_b_c, semaforo_d):
     # Depois da contagem libera o D
     up(semaforo_d)
 
+
 def c(t, n, semaforo_b_c, semaforo_d):
     print(f"    C aguardando . . .")
     down(semaforo_b_c)
@@ -44,6 +44,7 @@ def c(t, n, semaforo_b_c, semaforo_d):
     # Depois da contagem libera o D
     up(semaforo_d)
 
+
 def d(t, n, semaforo_d):
     print(f"      D aguardando . . .")
     down(semaforo_d)
@@ -53,7 +54,8 @@ def d(t, n, semaforo_d):
         sleep(t)
         print(f'      D: {i}')
     print(f"      D Finalizando contagem", end="\n", flush=True)
-    
+
+
 def main():
     print("* GRAFO DE PRECECÊNCIA")
     # Os valores de n(x) e t(x) devem ser fornecidos pelo usuário (no início do programa ou na linha de comando).
@@ -79,20 +81,20 @@ def main():
     print("\n* GRAFO DE PRECECÊNCIA")
 
     # Iniciar processos com os valores fornecidos pelo usuário
-    Process_a = Process(target=a, args=(t_a, n_a, semaforo_b_c))
-    Process_b = Process(target=b, args=(t_b, n_b, semaforo_b_c, semaforo_d))
-    Process_c = Process(target=c, args=(t_c, n_c, semaforo_b_c, semaforo_d))
-    Process_d = Process(target=d, args=(t_d, n_d, semaforo_d))
+    process_a = Process(target=a, args=(t_a, n_a, semaforo_b_c))
+    process_b = Process(target=b, args=(t_b, n_b, semaforo_b_c, semaforo_d))
+    process_c = Process(target=c, args=(t_c, n_c, semaforo_b_c, semaforo_d))
+    process_d = Process(target=d, args=(t_d, n_d, semaforo_d))
 
-    Process_a.start()
-    Process_b.start()
-    Process_c.start()
-    Process_d.start()
+    process_a.start()
+    process_b.start()
+    process_c.start()
+    process_d.start()
 
-    Process_a.join()
-    Process_b.join()
-    Process_c.join()
-    Process_d.join()
+    process_a.join()
+    process_b.join()
+    process_c.join()
+    process_d.join()
 
 
 if __name__ == "__main__":
