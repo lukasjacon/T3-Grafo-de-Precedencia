@@ -1,3 +1,5 @@
+# Alunos: Lukas Jacon Barboza e Pedro Bianchini de Quadros
+
 from multiprocessing import Process, Semaphore
 from time import sleep
 
