@@ -5,11 +5,12 @@
 
  Implemente em Python o grafo de precedência abaixo sendo que uma aresta de um processo X a um processo Y indica que Y só pode iniciar a contagem quando X terminar a sua. No grafo abaixo, isso significa que B e C só podem começar a sua contagem depois que A terminar a sua, e D só iniciará sua contagem quando B e C ambos tiverem terminado.
 
+ ![image](https://github.com/lukasjacon/T3-Grafo-de-Precedencia/assets/65463695/9cd0491f-3b75-4054-b9d2-5ca58b0057d9)
+
 ## Detalhamento:
  - Os valores de $n_x$ e $t_x$ devem ser fornecidos pelo usuário (no início do programa ou na linha de comando).
  - Use processos e não threads.
  - Os processos A, B, C e D devem ser iniciados no mesmo instante (no início do programa), embora a contagem de cada um só comece no instante apropriado.
 - Use um número mínimo de semáforos para sincronizar os processos.
 
-![image](https://github.com/lukasjacon/T3-Grafo-de-Precedencia/assets/65463695/9cd0491f-3b75-4054-b9d2-5ca58b0057d9)
 
