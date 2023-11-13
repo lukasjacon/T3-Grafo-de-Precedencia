@@ -10,3 +10,6 @@
  - Use processos e não threads.
  - Os processos A, B, C e D devem ser iniciados no mesmo instante (no início do programa), embora a contagem de cada um só comece no instante apropriado.
 - Use um número mínimo de semáforos para sincronizar os processos.
+
+![image](https://github.com/lukasjacon/T3-Grafo-de-Precedencia/assets/65463695/9cd0491f-3b75-4054-b9d2-5ca58b0057d9)
+
